@@ -15,5 +15,9 @@ steps:
   displayName: 'npm install'
 
 - script: |
+    npm install chromedriver
+  displayName: 'Install ChromeDriver'
+
+- script: |
     npm run test
   displayName: 'npm test'
