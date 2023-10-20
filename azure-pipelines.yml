@@ -21,6 +21,14 @@ steps:
     xvfb-run --auto-servernum npm run mocha:junit -- --env chrome 
   displayName: 'Run tests'
 
+- script: |
+    xvfb-run --auto-servernum npm run mocha:junit -- --env firefox 
+  displayName: 'Run tests'
+
+- script: |
+    xvfb-run --auto-servernum npm run mocha:junit -- --env edge 
+  displayName: 'Run tests'
+
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit' # 'JUnit' | 'NUnit' | 'VSTest' | 'XUnit' | 'CTest'. Alias: testRunner. Required. Test result format. Default: JUnit.
