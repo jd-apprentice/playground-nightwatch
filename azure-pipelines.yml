@@ -7,7 +7,7 @@ pool:
 steps:
 - task: VSTest@2
   inputs:
-    testSelector: 'testAssemblies' # 'testAssemblies' | 'testPlan' | 'testRun'. Required. Select tests using. Default: testAssemblies.
+    testSelector: 'testPlan' # 'testAssemblies' | 'testPlan' | 'testRun'. Required. Select tests using. Default: testAssemblies.
     testAssemblyVer2: # string. Required when testSelector = testAssemblies. Test files. 
     #testPlan: # string. Required when testSelector = testPlan. Test plan. 
     #testSuite: # string. Required when testSelector = testPlan. Test suite. 
