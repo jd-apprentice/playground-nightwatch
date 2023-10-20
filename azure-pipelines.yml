@@ -5,19 +5,12 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: NodeTool@0
+- task: VSTest@2
   inputs:
-    versionSpec: '16.x'
-  displayName: 'Install Node.js'
-
-- script: |
-    npm install
-  displayName: 'npm install'
-
-- script: |
-    npm install chromedriver
-  displayName: 'Install ChromeDriver'
-
-- script: |
-    npm run test
-  displayName: 'npm test'
+    testSelector: 'testAssemblies' # 'testAssemblies' | 'testPlan' | 'testRun'. Required. Select tests using. Default: testAssemblies.
+    testAssemblyVer2: # string. Required when testSelector = testAssemblies. Test files. 
+    #testPlan: # string. Required when testSelector = testPlan. Test plan. 
+    #testSuite: # string. Required when testSelector = testPlan. Test suite. 
+    #testConfiguration: # string. Required when testSelector = testPlan. Test configuration. 
+    #tcmTestRun: '$(test.RunId)' # string. Optional. Use when testSelector = testRun. Test Run. Default: $(test.RunId).
+    searchFolder: '$(System.DefaultWorkingDirectory)'
