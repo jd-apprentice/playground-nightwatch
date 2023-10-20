@@ -4,7 +4,9 @@
   "description": "A Nightwatch 2 boilerplate project which runs the bundled examples in Github Actions against Google Chrome",
   "main": "index.js",
   "scripts": {
-    "test": "nightwatch tests/guide/"
+    "test": "nightwatch tests/",
+    "mochawesome": "nightwatch tests/ --reporter mochawesome",
+    "mocha:junit": "nightwatch tests/ --reporter mocha-junit-reporter"
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,10 @@
   },
   "devDependencies": {
     "@nightwatch/selenium-server": "^4.5.0",
-    "chromedriver": "^117.0.0"
+    "chromedriver": "^117.0.0",
+    "mocha-junit-reporter": "^2.2.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
   }
 }
