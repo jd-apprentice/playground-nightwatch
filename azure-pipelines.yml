@@ -25,4 +25,3 @@ steps:
   inputs:
     testResultsFormat: 'JUnit' # 'JUnit' | 'NUnit' | 'VSTest' | 'XUnit' | 'CTest'. Alias: testRunner. Required. Test result format. Default: JUnit.
     testResultsFiles: 'test-*.xml' # string. Required. Test results files. Default: **/TEST-*.xml.
-    searchFolder: 'tests_output' # string. Search folder. Default: $(System.DefaultWorkingDirectory).
