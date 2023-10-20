@@ -18,10 +18,11 @@ steps:
     sudo apt-get install xvfb
 
 - script: |
-    xvfb-run --auto-servernum npm test -- --env chrome 
+    xvfb-run --auto-servernum npm mocha:junit -- --env chrome 
   displayName: 'Run tests'
 
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit' # 'JUnit' | 'NUnit' | 'VSTest' | 'XUnit' | 'CTest'. Alias: testRunner. Required. Test result format. Default: JUnit.
     testResultsFiles: 'test-*.xml' # string. Required. Test results files. Default: **/TEST-*.xml.
+    searchFolder: tests_output
